@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: auto; /* Allows content to grow beyond the page without overflow */
+    width: auto; /* Allows content to grow beyond the page without overflow */
+    min-height: 100%; /* Starts web page with 100% height. Fallback for IE 4-6 and older browsers */
+    min-height: 100vh;/* Starts web page with 100% height. Uses the viewport's height. Only works in modern HTML5 browsers */
+    overflow-y: scroll;/* Optional: Adds an empty scrollbar to the right margin in case content grows vertically, creating a scrollbar.  Allows for better width calculations, as the browser pre-calculates width before scrollbar appears, avoiding page content shifting.*/
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    flex-direction: column;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
