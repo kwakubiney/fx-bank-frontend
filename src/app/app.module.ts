@@ -6,16 +6,20 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { ACCOUNT_SERVICE_TOKEN } from 'src/app/services/utilities';
+import { ACCOUNT_SERVICE_TOKEN, PROVIDER_SERVICE_TOKEN } from 'src/app/services/utilities';
 import { AccountsRemoteService } from './services/accounts-remote.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RatesComponent } from './pages/rates/rates.component';
+import { ProvidersLocalService } from './services/providers-local.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LandingComponent,
-    DashboardComponent
+    DashboardComponent,
+    RatesComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    { provide : ACCOUNT_SERVICE_TOKEN, useClass: AccountsRemoteService}
+    { provide : ACCOUNT_SERVICE_TOKEN, useClass: AccountsRemoteService},
+    { provide : PROVIDER_SERVICE_TOKEN, useClass: ProvidersLocalService}
   ],
   bootstrap: [AppComponent]
 })

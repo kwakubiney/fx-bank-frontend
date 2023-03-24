@@ -1,0 +1,36 @@
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 32px;
+}
+
+.rates{
+    height: 80%;
+    width: 80%;
+}
+
+table{
+    width: 100%;
+}
+
+th, td{
+    color: black;
+    font-size: 17px;
+}
+
+td{
+    text-align: center;
+    padding: 20px 20px;
+}
