@@ -1,4 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { providers } from 'src/app/models/provider';
 import { ProvidersLocalService } from 'src/app/services/providers-local.service';
 import { PROVIDER_SERVICE_TOKEN } from 'src/app/services/utilities';
@@ -8,16 +9,18 @@ import { PROVIDER_SERVICE_TOKEN } from 'src/app/services/utilities';
   templateUrl: './rates.component.html',
   styleUrls: ['./rates.component.css']
 })
-export class RatesComponent implements OnInit {
+export class RatesComponent implements OnInit, OnDestroy {
 
   providers:providers[] = []
+  subscription:Subscription = Subscription.EMPTY
 
   constructor(
     @Inject(PROVIDER_SERVICE_TOKEN) private providerService: ProvidersLocalService
   ) {}
 
+
   ngOnInit(): void {
-    this.providerService.getProvidersList().subscribe(
+    this.subscription = this.providerService.getProvidersList().subscribe(
       {
         next : (res) => {
           this.providers = res.data!
@@ -28,5 +31,7 @@ export class RatesComponent implements OnInit {
     )
   }
 
-  
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe()
+  }
 }

@@ -20,7 +20,7 @@ export class AccountsRemoteService implements AccountService{
   }
 
   createAccount(account: Account): Observable<Response<Account>> {
-    const url = buildUrl("/account")
+    const url = buildUrl("/createAccount")
     return this.http.post<Response<Account>>(url, account, httpOptions)
     .pipe(catchError(handleError))
   }
