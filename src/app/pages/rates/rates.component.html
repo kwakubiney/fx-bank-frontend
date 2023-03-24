@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="wrapper">
+        <section class="rates">
+            <table class="">
+                <thead>
+                  <tr>
+                    <th>Provider</th>
+                    <th>Currency Exchange</th>
+                    <th>Buy Rate</th>
+                    <th>Sell Rate</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <ng-container *ngFor="let provider of providers">
+                <tbody>
+                    <td>{{[provider.provider_name]}}</td>
+                    <td>{{provider.currency_exchange}}</td>
+                    <td>{{provider.buy_rate}}</td>
+                    <td>{{provider.sell_rate}}</td>
+                    <td><button>Buy</button></td>
+                </tbody>     
+                </ng-container>
+              </table>
+        </section>
+    </div>
+</div>
