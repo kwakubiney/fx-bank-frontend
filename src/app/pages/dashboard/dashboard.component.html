@@ -1,1 +1,23 @@
-
+<div class="container">
+    <div class="wrapper">
+        <section class="account-intro">
+            <p>
+            Opened Accounts</p>
+        </section>
+        <section class="accounts">
+            <ng-container *ngFor="let account of accountDetails">
+                <div class="accounts-grid-item">
+                    <div class="items">
+                        <div class="flag">
+                            <p>{{account.name}}</p>
+                        </div>
+                        <div class="currency-amount">
+                            <p>{{account.balance}}<p>
+                            <p style="font-size: small;">{{account.currency}}</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </section>
+    </div>
+</div>
