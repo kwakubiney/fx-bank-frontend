@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="wrapper">
+        <section class="create-account">
+           <div class="intro">
+                <p>Create an account with us 🎉</p>
+           </div>
+           <div class="form">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="currency" id="form-item">
+                        <select name="field" id="field" class="select-field" placeholder="Currency" [(ngModel)]="accounts.currency">
+                            <option value="Select currency" selected disabled>Select currency</option>
+                            <option *ngFor="let currency of currency">{{ currency }}</option>
+                        </select>
+                    </div>
+                    <div class="name" id="form-item">
+                        <input type="text" id="field" placeholder="Name of account" [(ngModel)]="accounts.name" name="name">
+                    </div>
+                    <div id="form-item">
+                        <button type=submit style="padding: 10px 10px;">Create Account</button>
+                    </div>
+                </form>
+           </div>
+        </section>
+    </div>
+</div>

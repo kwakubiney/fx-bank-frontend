@@ -11,6 +11,8 @@ import { AccountsRemoteService } from './services/accounts-remote.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RatesComponent } from './pages/rates/rates.component';
 import { ProvidersLocalService } from './services/providers-local.service';
+import { CreateAccountComponent } from './pages/create-account/create-account.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,11 +22,13 @@ import { ProvidersLocalService } from './services/providers-local.service';
     LandingComponent,
     DashboardComponent,
     RatesComponent,
+    CreateAccountComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     { provide : ACCOUNT_SERVICE_TOKEN, useClass: AccountsRemoteService},
