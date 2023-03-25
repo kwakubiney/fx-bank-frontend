@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="wrapper">
+        <p>Sign Up<p>
+        <form (ngSubmit)="onSubmit()">
+            <div class="sign-up">
+                <input type="text" name="" id="" placeholder="Username" [(ngModel)]="signUpRequest.username" name="username">
+                <input type="text" name="" id="" placeholder="Create Password" [(ngModel)]="signUpRequest.password" name="password">
+            </div>
+            <div class="flex">
+                <button type=submit pButtonstyle="padding: 10px 10px 10px 10px;">Create Account</button>
+            </div>   
+        </form>   
+    </div>
+</div>
+<p-toast></p-toast>

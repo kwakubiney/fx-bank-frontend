@@ -14,7 +14,7 @@ import { PurchaseStoreService } from 'src/app/store/purchase-store.service';
 export class DashboardComponent implements OnInit, OnDestroy{
 
   subscription:Subscription = Subscription.EMPTY
-  userId:string = "bfbab79b-4391-4947-9dd4-1064b8dbdd80"
+  userId:string = ""
   accountDetails:Account[] = []
     
   constructor(
@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit, OnDestroy{
 
 
   ngOnInit(){
+    this.userId = localStorage.getItem("user_id")!
     this.subscription = this.getAccountsForUser(this.userId).subscribe(
       {
         next : res  => {

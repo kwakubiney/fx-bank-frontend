@@ -1,23 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
-import { transfer } from '../models/make.transfer';
 import { Response } from '../models/response.model';
-import { TransferService } from './transfer-service';
+import { signUpRequest } from '../models/signup.model';
+import { signUp } from './sign-up-service';
 import { buildUrl, handleError, httpOptions } from './utilities';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TransferRemoteService implements TransferService{
+export class SignUpRemoteService implements signUp{
 
   constructor(private http:HttpClient) {}
 
-  makeTransfer(transfer: transfer): Observable<Response<transfer>> {
-    const url = buildUrl(`/auth/transfer`)
-    return this.http.post<Response<transfer>>(url, transfer, httpOptions)
+  signUp(req: signUpRequest): Observable<Response<signUpRequest>> {
+    const url = buildUrl(`/signUp`)
+    return this.http.post<Response<signUpRequest>>(url, req, httpOptions)
     .pipe(catchError(handleError))
   }
-
 }
-
