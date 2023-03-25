@@ -14,13 +14,13 @@ export class AccountsRemoteService implements AccountService{
 
   constructor(private http: HttpClient) {}
   getAccountsForUserID(user_id: string): Observable<Response<Account[]>> {
-    const url = buildUrl(`/getAccounts/${user_id}`)
+    const url = buildUrl(`/auth/getAccounts/${user_id}`)
     return this.http.get<Response<Account[]>>(url)
     .pipe(catchError(handleError))
   }
 
   createAccount(account: Account): Observable<Response<Account>> {
-    const url = buildUrl("/createAccount")
+    const url = buildUrl("/auth/createAccount")
     return this.http.post<Response<Account>>(url, account, httpOptions)
     .pipe(catchError(handleError))
   }

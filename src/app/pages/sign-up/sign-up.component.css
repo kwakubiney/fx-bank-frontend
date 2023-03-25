@@ -20,9 +20,15 @@
 .flex{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 100%;
 }
 
-button{
-    width: 30%;
+.sign-up{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+input {
+    margin:0 0 10px 0;
 }

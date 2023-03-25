@@ -26,12 +26,13 @@ export class CreateAccountComponent implements OnDestroy {
     id:"",
     currency: "john",
     name: "",
-    user_id: "bfbab79b-4391-4947-9dd4-1064b8dbdd80"
+    user_id: localStorage.getItem("user_id")!
   }
 
-  user_id = "bfbab79b-4391-4947-9dd4-1064b8dbdd80"
+  user_id = " "
 
   createAccount(selectedCurrency:string, accountName:string, user_id:string ){
+    user_id = localStorage.getItem("user_id")!
     let account = { currency: selectedCurrency, name: accountName, user_id: user_id} as Account;
     this.subscription = this.accountService.createAccount(account)
     .subscribe({

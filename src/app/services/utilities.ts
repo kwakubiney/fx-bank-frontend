@@ -7,7 +7,8 @@ import { environment } from 'src/environments/environment';
 export const ACCOUNT_SERVICE_TOKEN = new InjectionToken('account-service');
 export const PROVIDER_SERVICE_TOKEN = new InjectionToken('provider-service');
 export const TRANSFER_SERVICE_TOKEN = new InjectionToken('transfer-service');
-
+export const SIGNUP_SERVICE_TOKEN = new InjectionToken('signup-service');
+export const LOGIN_SERVICE_TOKEN = new InjectionToken('login-service');
 
 export function createObservable<T>(value: T): Observable<T> {
   return new Observable<T>((subscriber) => {
