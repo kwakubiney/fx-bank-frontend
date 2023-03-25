@@ -30,3 +30,9 @@ body{
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
+.custom-toast .ui-toast-message-content {
+    font-family: 'Courier New', Courier, monospace;
+    background: #FFD07B;
+}
+  

@@ -17,7 +17,8 @@ export class ProvidersLocalService {
       buy_rate: 1.34,
       provider_id: "5220bf8a-f10f-428b-8095-9779742538b4",
       provider_name: "Goldman Sachs",
-      currency_exchange : "USD-CAD",
+      send_currency: "US Dollar",
+      receive_currency: "Ghana Cedis",
       sell_rate: 1.24,
     },
 
@@ -25,7 +26,8 @@ export class ProvidersLocalService {
       buy_rate: 1.34,
       provider_id: "5220bf8a-f10f-428b-8095-9779742538b6",
       provider_name: "Morgan Stanley",
-      currency_exchange : "USD-CAD",
+      send_currency: "US Dollar",
+      receive_currency: "Ghana Cedis",
       sell_rate: 1.24,
     },
 
@@ -33,7 +35,8 @@ export class ProvidersLocalService {
       buy_rate: 1.34,
       provider_id: "5220bf8a-f10f-428b-8095-9779742538b3",
       provider_name: "CIBC",
-      currency_exchange : "GHC-NAIRA",
+      send_currency: "US Dollar",
+      receive_currency: "Ghana Cedis",
       sell_rate: 1.24,
     },
 
@@ -41,7 +44,8 @@ export class ProvidersLocalService {
       buy_rate: 1.34,
       provider_id: "5220bf8a-f10f-428b-8095-9779742538b7",
       provider_name: "Bank Of America",
-      currency_exchange : "USD-CAD",
+      send_currency: "Naira",
+      receive_currency: "Ghana Cedis",
       sell_rate: 1.24,
     },
 
@@ -49,7 +53,8 @@ export class ProvidersLocalService {
       buy_rate: 1.34,
       provider_id: "5220bf8a-f10f-428b-8095-9779742538b0",
       provider_name: "Scotia Bank",
-      currency_exchange : "USD-CAD",
+      send_currency: "Naira",
+      receive_currency: "Ghana Cedis",
       sell_rate: 1.24,
     },
 
@@ -57,7 +62,8 @@ export class ProvidersLocalService {
       buy_rate: 1.34,
       provider_id: "5220bf8a-f10f-428b-8095-9779742538b4",
       provider_name: "Ecobank",
-      currency_exchange : "USD-CAD",
+      send_currency: "Naira",
+      receive_currency: "Ghana Cedis",
       sell_rate: 1.24,
     },
 
@@ -65,7 +71,8 @@ export class ProvidersLocalService {
       buy_rate: 1.34,
       provider_id: "5220bf8a-f10f-428b-8095-9779742538a4",
       provider_name: "Citi Bank",
-      currency_exchange : "USD-CAD",
+      send_currency: "Naira",
+      receive_currency: "Ghana Cedis",
       sell_rate: 1.24,
     },
 
@@ -73,7 +80,8 @@ export class ProvidersLocalService {
       buy_rate: 1.34,
       provider_id: "5220bf8a-f10f-428b-8095-9779742438b4",
       provider_name: "Goldman Sachs",
-      currency_exchange : "USD-CAD",
+      send_currency: "GB Pound",
+      receive_currency: "Ghana Cedis",
       sell_rate: 1.24,
     },
   ]
