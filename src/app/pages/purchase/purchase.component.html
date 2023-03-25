@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="wrapper">
+        <section class="order-summary">
+            <ng-container *ngIf="providers$ | async; let _provider">
+                <div class="form">
+                    <form (ngSubmit) = onSubmit()>
+                        <div class="currency" id="form-item">
+                            <select name="field" id="field" class="select-field" placeholder="From" [(ngModel)]="senderId">
+                                <option value="" selected disabled>Select sender {{providers.send_currency}} account</option>
+                                <option *ngFor="let sender of senders">{{ sender.id }}</option>
+                            </select>
+                            <select name="field" id="field" class="select-field" placeholder="From" [(ngModel)]="receiverId">
+                                <option value="" selected disabled>Select receiver {{providers.receive_currency}} account</option>
+                                <option *ngFor="let receiver of receivers">{{ receiver.id }}</option>
+                            </select>
+                        </div>
+                        <div class="name" id="form-item">
+                            <input type="text" id="field" placeholder="Amount" [(ngModel)]="amount" name="amount">
+                        </div>
+                        <div id="form-item">
+                            <button type= "submit" style="padding: 10px 10px;">Make purchase</button>
+                        </div>
+                    </form>
+               </div>
+            </ng-container>
+        </section>
+    </div>
+</div>
+<p-toast></p-toast>
+

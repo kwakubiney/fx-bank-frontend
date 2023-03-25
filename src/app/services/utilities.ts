@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 
 export const ACCOUNT_SERVICE_TOKEN = new InjectionToken('account-service');
 export const PROVIDER_SERVICE_TOKEN = new InjectionToken('provider-service');
+export const TRANSFER_SERVICE_TOKEN = new InjectionToken('transfer-service');
 
 
 export function createObservable<T>(value: T): Observable<T> {

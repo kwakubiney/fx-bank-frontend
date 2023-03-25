@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { Account } from 'src/app/models/account';
 import { AccountsRemoteService } from 'src/app/services/accounts-remote.service';
 import { ACCOUNT_SERVICE_TOKEN } from 'src/app/services/utilities';
+import { AccountStoreService } from 'src/app/store/account.store.service';
+import { PurchaseStoreService } from 'src/app/store/purchase-store.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +18,8 @@ export class DashboardComponent implements OnInit, OnDestroy{
   accountDetails:Account[] = []
     
   constructor(
-    @Inject(ACCOUNT_SERVICE_TOKEN) private accountService: AccountsRemoteService
+    @Inject(ACCOUNT_SERVICE_TOKEN) private accountService: AccountsRemoteService,
+    private accountStore: AccountStoreService
   ) {}
 
 
@@ -25,6 +28,7 @@ export class DashboardComponent implements OnInit, OnDestroy{
       {
         next : res  => {
           this.accountDetails = res.data!
+          this.accountStore.setAccount(this.accountDetails)
           console.log(res.data)
         },
         error : err => console.log(err)

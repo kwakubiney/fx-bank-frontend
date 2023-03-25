@@ -1,6 +1,7 @@
 import { Time } from "@angular/common"
 
 export interface Account{
+    id:string
     user_id:string
     name: string
     balance?: number

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { PurchaseComponent } from './pages/purchase/purchase.component';
 import { RatesComponent } from './pages/rates/rates.component';
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'createAccount',
     component: CreateAccountComponent,
+  },
+  {
+    path: 'purchase',
+    component: PurchaseComponent,
   },
 ]
 
