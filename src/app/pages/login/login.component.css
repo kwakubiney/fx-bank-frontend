@@ -32,3 +32,13 @@
 input {
     margin:0 0 10px 0;
 }
+
+.newfont-styles .ui-toast-message {
+    font-family: 'proxima nova';
+    color:"red"
+    }
+
+:host ::ng-deep .newfont-styles .ui-toast {
+        display: flex;
+        width:70%;
+}

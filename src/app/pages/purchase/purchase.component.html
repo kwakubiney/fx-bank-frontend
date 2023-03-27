@@ -1,30 +1,38 @@
 <div class="container">
     <div class="wrapper">
         <section class="order-summary">
-            <ng-container *ngIf="providers$ | async; let _provider">
-                <div class="form">
-                    <form (ngSubmit) = onSubmit()>
-                        <div class="currency" id="form-item">
-                            <select name="field" id="field" class="select-field" placeholder="From" [(ngModel)]="senderId">
-                                <option value="" selected disabled>Select sender {{providers.send_currency}} account</option>
-                                <option *ngFor="let sender of senders">{{ sender.id }}</option>
-                            </select>
-                            <select name="field" id="field" class="select-field" placeholder="From" [(ngModel)]="receiverId">
-                                <option value="" selected disabled>Select receiver {{providers.receive_currency}} account</option>
-                                <option *ngFor="let receiver of receivers">{{ receiver.id }}</option>
+            <ng-container *ngIf="providers.provider_id != ''; else noItems">
+                <ng-container *ngIf=" providers$ | async; let _provider">
+                    <form (ngSubmit)=onSubmit()>
+                        <div class="currency">
+                            <label for="send">Select {{providers.send_currency}} account</label>
+                            <select name="send " id="field " class="select-field" [(ngModel)]="senderId">
+                                <option value="">-- Select an option --</option>
+                                <option *ngFor="let sender of senders " [value]="sender.id">{{ sender.name }}</option>
                             </select>
                         </div>
-                        <div class="name" id="form-item">
-                            <input type="text" id="field" placeholder="Amount" [(ngModel)]="amount" name="amount">
+                        <div class="currency">
+                            <label for="receive">Select {{providers.receive_currency}} account</label>
+                            <select name="receive " id="field " class="select-field" [(ngModel)]="receiverId">
+                                <option value="">-- Select an option --</option>
+                                <option *ngFor="let receiver of receivers" [value]="receiver.id">{{ receiver.name }}</option>
+                            </select>
                         </div>
-                        <div id="form-item">
-                            <button type= "submit" style="padding: 10px 10px;">Make purchase</button>
+                        <div class="name">
+                            <input type="text " id="field " placeholder="Amount " [(ngModel)]="amount " name="amount ">
+                        </div>
+                        <div class="purchase">
+                            <button type="submit " style="padding: 10px 10px; ">Make purchase</button>
                         </div>
                     </form>
-               </div>
+                </ng-container>
             </ng-container>
         </section>
     </div>
 </div>
-<p-toast></p-toast>
-
+<ng-template #noItems>
+    <h3 class="text-xl ">
+        Check out the rates and make a purchase!
+    </h3>
+</ng-template>
+<p-toast position=top-left></p-toast>

@@ -13,7 +13,7 @@ import { ACCOUNT_SERVICE_TOKEN } from 'src/app/services/utilities';
 export class CreateAccountComponent implements OnDestroy {
 
   constructor(@Inject(ACCOUNT_SERVICE_TOKEN) private accountService: AccountsRemoteService,
-            private messageService: MessageService
+    private messageService: MessageService
   ){
   }
 

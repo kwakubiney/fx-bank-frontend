@@ -1,4 +1,4 @@
-.container{
+.container {
     height: 100%;
     width: 100%;
     display: flex;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.wrapper{
+.wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,7 +16,7 @@
     font-size: 32px;
 }
 
-.order-summary{
+.order-summary {
     height: 51%;
     width: 60%;
     display: flex;
@@ -25,36 +25,44 @@
     font-size: 20px;
 }
 
-form{
+label {
+    font-size: 20px;
+}
+
+form {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     height: 100%;
 }
 
-#form-item{
+#form-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 0 0 80px 0;
 }
 
-label{
+label {
     width: 50%;
     padding: 20px;
 }
 
-.form{
+.form {
+    display: flex;
     height: 100%;
+    justify-content: space-evenly;
 }
 
-.intro{
+.intro {
     height: 20%;
     text-align: center;
 }
 
-#field{
+#field {
     border-radius: 1rem;
-    padding: 0.5rem;
+    padding: 20px 20px 20px 20px;
     border: none;
     width: 60%;
     background-color: #16330014;
@@ -62,12 +70,38 @@ label{
     color: black;
 }
 
-#field:focus{
+#field:focus {
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
 }
 
-.button:hover{
+.button:hover {
     border-radius: 2%;
     background-color: #16330014;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.purchase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.currency {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
