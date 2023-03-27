@@ -2,7 +2,11 @@
     <div class="wrapper">
         <section class="account-intro">
             <p>
-            Opened Accounts</p>
+                Hey {{username}} 👋,</p>
+        </section>
+        <section class="account-intro">
+            <p>
+                Opened Accounts</p>
         </section>
         <section class="accounts">
             <ng-container *ngFor="let account of accountDetails">
@@ -11,9 +15,13 @@
                         <div class="flag">
                             <p>{{account.name}}</p>
                         </div>
+                        <div class="actual fi fi-us" *ngIf="account.currency === 'US Dollar'"></div>
+                        <div class="actual fi fi-gb" *ngIf="account.currency === 'GB Pound'"> </div>
+                        <div class="actual fi fi-gh" *ngIf="account.currency === 'Ghana Cedis'"> </div>
+                        <div class="actual fi fi-ng" *ngIf="account.currency === 'Naira'"> </div>
                         <div class="currency-amount">
-                            <p class="margin">{{account.balance}}<br>
-                            {{account.currency}}</p>
+                            <p class="margin">{{account.balance}}<br> {{account.currency}}
+                            </p>
                         </div>
                     </div>
                 </div>

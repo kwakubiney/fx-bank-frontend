@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from './auth/auth-guard.service';
+import { NonAuthGuardService } from './auth/non-auth-guard.service';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LandingComponent } from './pages/landing/landing.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {
     path: '',
     component: LandingComponent,
+    canActivate: [NonAuthGuardService] 
   },
   {
     path: 'dashboard',

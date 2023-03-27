@@ -10,9 +10,9 @@ export class PurchaseStoreService {
   constructor() {
   }
 
-  public providers:providers={provider_id:"", provider_name:"", send_currency:"", receive_currency:"", buy_rate:0, sell_rate:0}
+  public providers:providers={provider_id:"", provider_name:"", send_currency:"", receive_currency:"", sell_rate:0}
   public providers$: BehaviorSubject<providers> = new BehaviorSubject<providers>
-  ({provider_id:"", provider_name:"", send_currency:"", receive_currency:"", buy_rate:0, sell_rate:0});
+  ({provider_id:"", provider_name:"", send_currency:"", receive_currency:"", sell_rate:0});
 
 
   setProvider(providers: providers): void {

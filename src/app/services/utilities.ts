@@ -1,4 +1,4 @@
-import { HttpHeaders } from '@angular/common/http';
+import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { InjectionToken } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -17,9 +17,31 @@ export function createObservable<T>(value: T): Observable<T> {
   });
 }
 
-export function handleError(error: any): Observable<never> {
-  throw new Error('Oops something went wrong! Please try again later.');
+export function handleError(error: HttpErrorResponse): Observable<never> {
+  let errorMsg:string
+  errorMsg = error.error.message;
+  throw new Error(errorMsg);
 }
+
+// function getServerErrorMessage(error: HttpErrorResponse): string {
+//   switch (error.status) {
+//       case 404: {
+//           return `Not Found: ${error.message}`;
+//       }
+//       case 403: {
+//           return `Access Denied: ${error.message}`;
+//       }
+//       case 500: {
+//           return `Internal Server Error: ${error.message}`;
+//       }
+//       case 400: {
+//         return `Bad Request: ${error.message}`;
+//     }
+//       default: {
+//           return `Unknown Server Error: ${error.message}`;
+//       }
+//   }
+// }
 
 export const httpOptions = {
   headers: new HttpHeaders({

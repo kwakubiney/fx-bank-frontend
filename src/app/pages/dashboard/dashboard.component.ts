@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit, OnDestroy{
 
   subscription:Subscription = Subscription.EMPTY
   userId:string = ""
+  username:string=""
   accountDetails:Account[] = []
     
   constructor(
@@ -25,12 +26,19 @@ export class DashboardComponent implements OnInit, OnDestroy{
 
   ngOnInit(){
     this.userId = localStorage.getItem("user_id")!
+    this.username = localStorage.getItem("username")!
     this.subscription = this.getAccountsForUser(this.userId).subscribe(
       {
         next : res  => {
-          this.accountDetails = res.data!
-          this.accountStore.setAccount(this.accountDetails)
           console.log(res.data)
+          this.accountDetails = res.data!.map(item => {
+            return {
+              ...item,
+              balance: item.balance!
+            };
+          });
+          console.log(this.accountDetails)
+          this.accountStore.setAccount(this.accountDetails)
         },
         error : err => console.log(err)
       }

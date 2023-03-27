@@ -31,7 +31,6 @@ export class RatesComponent implements OnInit, OnDestroy {
       {
         next: (res) => {
           this.providers = res.data!
-          console.log(res.data)
       },
       error : err => console.log(err)    
     }

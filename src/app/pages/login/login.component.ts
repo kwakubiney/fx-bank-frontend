@@ -31,6 +31,7 @@ export class LoginComponent {
       next: (value) => {
         localStorage.setItem("token", value.data?.token!)
         localStorage.setItem("user_id", value.data?.user_id!)
+        localStorage.setItem("username", value.data?.username!)
         this.displayModal = !this.displayModal;
         this.messageService.add({
           severity: 'success',

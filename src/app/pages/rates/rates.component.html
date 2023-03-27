@@ -3,26 +3,24 @@
         <section class="rates">
             <table class="">
                 <thead>
-                  <tr>
-                    <th>Provider</th>
-                    <th>Send Currency</th>
-                    <th>Receive Currency</th>
-                    <th>Buy Rate</th>
-                    <th>Sell Rate</th>
-                    <th>Action</th>
-                  </tr>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Send Currency</th>
+                        <th>Receive Currency</th>
+                        <th>Sell Rate</th>
+                        <th>Action</th>
+                    </tr>
                 </thead>
                 <ng-container *ngFor="let provider of providers">
-                <tbody>
-                    <td>{{[provider.provider_name]}}</td>
-                    <td>{{provider.send_currency}}</td>
-                    <td>{{provider.receive_currency}}</td>
-                    <td>{{provider.buy_rate}}</td>
-                    <td>{{provider.sell_rate}}</td>
-                    <td><a href="" routerLink="/purchase/"><button type="button" (click)="setProviderDetails(provider)" icon="pi pi-info-circle" label="Show">Buy</button></a></td>
-                </tbody>     
+                    <tbody>
+                        <td>{{[provider.provider_name]}}</td>
+                        <td>{{provider.send_currency}}</td>
+                        <td>{{provider.receive_currency}}</td>
+                        <td>{{provider.sell_rate}}</td>
+                        <td><a href="" routerLink="/purchase/"><button type="button" (click)="setProviderDetails(provider)" icon="pi pi-info-circle" label="Show">Buy</button></a></td>
+                    </tbody>
                 </ng-container>
-              </table>
+            </table>
         </section>
     </div>
 </div>

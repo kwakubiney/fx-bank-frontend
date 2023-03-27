@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { catchError, of } from 'rxjs';
 import { signUpRequest } from 'src/app/models/signup.model';
 import { signUp } from 'src/app/services/sign-up-service';
 import { SignUpRemoteService } from 'src/app/services/sign-up.service';
@@ -26,10 +27,10 @@ export class SignUpComponent {
   }
 
   displayModal = false
+  errorMessage:string = ""
 
   signUp(){
-    this.signUpService.signUp(this.signUpRequest)
-    .subscribe({
+    this.signUpService.signUp(this.signUpRequest).subscribe({
       next: (value) => {
         this.displayModal = !this.displayModal;
         this.messageService.add({
@@ -37,20 +38,20 @@ export class SignUpComponent {
           summary: 'Success',
           detail: 'User account created successfully!',
         });
+        this.signUpRequest.password=""
+        this.signUpRequest.username=""
+        this.router.navigate(['/'])
       },
-      error: (error) => {
+      error: (error:Error) => {
         this.displayModal = !this.displayModal;
         this.messageService.add({
           severity: 'error',
           summary: 'Error',
           detail:
-            'An unexpected error occurred while trying to create user account.',
+            `${error.message}`,
         });
       },
     });
-    this.signUpRequest.password=""
-    this.signUpRequest.username=""
-    this.router.navigate(['/'])
   }
 
   onSubmit(){
